@@ -60,7 +60,7 @@ app.post('/new', (req, res) => {
 app.post('/enter',(req,res)=>{
     res.redirect('/');
 })
-
+console.log(process.env.API_KEY);
 
 app.listen(port, () => {
     console.log(`Connected To Port  ${port}`);
