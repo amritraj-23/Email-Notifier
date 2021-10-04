@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-require('dotenv').config();
+// require('dotenv').config();
 const sgMail = require('@sendgrid/mail');
-const key = process.env.API_KEY;
+// const key = process.env.API_KEY;
+const key = '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';
 sgMail.setApiKey(key);
 const port = process.env.PORT || 3000;
 
@@ -60,7 +61,7 @@ app.post('/new', (req, res) => {
 app.post('/enter',(req,res)=>{
     res.redirect('/');
 })
-console.log(process.env.API_KEY);
+// console.log(process.env.API_KEY);
 
 app.listen(port, () => {
     console.log(`Connected To Port  ${port}`);
