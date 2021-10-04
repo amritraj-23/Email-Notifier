@@ -5,6 +5,7 @@ require('dotenv').config();
 const sgMail = require('@sendgrid/mail');
 const key = process.env.API_KEY;
 sgMail.setApiKey(key);
+const port = process.env.PORT || 3000;
 
 
 
@@ -12,7 +13,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({
-    extended: false
+    extended: true
 }))
 
 const Alert = require('./models/schema.js');
@@ -61,6 +62,6 @@ app.post('/enter',(req,res)=>{
 })
 
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Connected To Port 3000");
+app.listen(port, () => {
+    console.log(`Connected To Port  ${port}`);
 })
