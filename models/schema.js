@@ -1,5 +1,16 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/alert-system');
+require('dotenv').config();
+
+const DB = `mongodb+srv://${process.env.DB_USER_NAME}:${process.env.DB_PASSWORD}@cluster0.c6vjd.mongodb.net/Amritraj?retryWrites=true&w=majority`;
+
+mongoose.connect(DB,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(()=>{
+    console.log("Connection Sucessful");
+}).catch((err)=>{
+    console.log(err.message);
+})
 
 const alertSchema = new mongoose.Schema({
     FirstName: {

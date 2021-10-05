@@ -3,8 +3,7 @@ const app = express();
 const path = require('path');
 require('dotenv').config();
 const sgMail = require('@sendgrid/mail');
-const key = process.env.API_KEY;
-sgMail.setApiKey(key);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const port = process.env.PORT || 3000;
 
 
@@ -39,7 +38,7 @@ app.post('/new', (req, res) => {
     const check = req.body.check;
     const message = {
         to: mail,
-        from: "rajamrit2308@gmail.com",
+        from: "arboy2308@gmail.com",
         subject: "Creted By Amrit Raj",
         html: `<h1>You ${check}  The Office At This Time ${d.getHours()}:${d.getMinutes()} IST</h1>`,
     }
@@ -50,7 +49,7 @@ app.post('/new', (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-        })
+        })  
     res.render('enter');
 })
 
