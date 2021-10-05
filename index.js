@@ -21,7 +21,6 @@ const Alert = require('./models/schema.js');
 const d = new Date();
 
 
-
 app.get('/', (req, res) => {
     res.render('form');
 })
@@ -42,7 +41,7 @@ app.post('/new', (req, res) => {
         to: mail,
         from: "rajamrit2308@gmail.com",
         subject: "Creted By Amrit Raj",
-        html: `<h1>You ${check}  The Office At This Time ${d} </h1>`,
+        html: `<h1>You ${check}  The Office At This Time ${d.getHours()}:${d.getMinutes()} IST</h1>`,
     }
 
     sgMail.send(message)
