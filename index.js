@@ -42,7 +42,7 @@ app.post('/new', (req, res) => {
         to: mail,
         from: "rajamrit2308@gmail.com",
         subject: "Creted By Amrit Raj",
-        html: `<h1>You ${check}  The Office At This Time ${d.toUTCString()} </h1>`,
+        html: `<h1>You ${check}  The Office At This Time ${d} </h1>`,
     }
 
     sgMail.send(message)
