@@ -5,6 +5,7 @@ require('dotenv').config();
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const port = process.env.PORT || 3000;
+const cors = require('cors')
 
 
 app.set('view engine', 'ejs');
@@ -19,7 +20,7 @@ const Alert = require('./models/schema.js');
 
 const d = new Date();
 
-
+app.use(cors())
 app.get('/', (req, res) => {
     res.render('form');
 })
