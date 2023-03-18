@@ -4,7 +4,7 @@
   "description": "Alerting System",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js",
+    "start": "node index.js",
     "build": "npm run start"
   },
   "author": "Amrit Raj",
