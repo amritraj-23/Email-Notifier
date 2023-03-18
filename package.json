@@ -4,7 +4,8 @@
   "description": "Alerting System",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./index.js",
+    "build": "node index.js"
   },
   "author": "Amrit Raj",
   "license": "ISC",
