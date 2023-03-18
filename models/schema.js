@@ -40,10 +40,20 @@ const alertSchema = new mongoose.Schema({
         default: Date.now
     },
 
+},{
+    "timestamps" : true
 })
 
 
 const Alert = new mongoose.model('Alert', alertSchema);
+
+Alert.collection.createIndex({"PhoneNumber" : 1},(err)=>{
+    if(err){
+        console.log(arr);
+    }else{
+        console.log("index created successfully");
+    }
+})
 
 
 module.exports = Alert;
